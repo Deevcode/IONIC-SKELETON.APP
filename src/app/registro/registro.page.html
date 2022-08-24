@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registro</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-subtitle>Registro</ion-card-subtitle>
+      <ion-card-title>Datos Personales</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-label position="top-center" >Porfavor ingrese sus datos</ion-label>
+
+      <form [formGroup]="formularioRegistro">
+
+        <ion-item>
+          <ion-label position="floating" >Nombre</ion-label> <!--Dato numero 1-->
+          <ion-input formControlName="nombre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating" >Appelido</ion-label> <!--Dato numero 2-->
+          <ion-input formControlName="apellido"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating" >Contraseña</ion-label> <!--Dato numero 3-->
+          <ion-input formControlName="password" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating" >Confirma contraseña</ion-label> <!--Dato numero 3.1-->
+          <ion-input formControlName="confirmPassword" type="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating" >Nivel edudacion</ion-label> <!--Dato numero 4-->
+          <ion-select formControlName="educacion">
+            <ion-select-option value="brown">Escolar basica completa</ion-select-option>
+            <ion-select-option value="brown">Escolar basica incompleta</ion-select-option>
+            <ion-select-option value="blonde">Escolar secundaria completa</ion-select-option>
+            <ion-select-option value="blonde">Escolar secundaria incompleta</ion-select-option>
+            <ion-select-option value="red">Nivel superior completa</ion-select-option>
+            <ion-select-option value="red">Nivel superior incompleta</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating" >Fecha de nacimiento</ion-label> <!--Dato numero 5--> 
+          <ion-input formControlName="nacimiento"><ion-datetime presentation="month-year"></ion-datetime></ion-input>
+        </ion-item>
+
+        <br>
+        <ion-button slot="start" (click)="guardar()" >Registrarse</ion-button>
+        <ion-button slot="end" [routerLink]="['/login']" >Loguearse</ion-button>
+        <br>
+        <ion-button type="reset" >Resetear</ion-button>
+      </form>
+      
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-list>
+
+          
+    
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    Devel. by: Jose Cornejo/Moises Rubio
+  </ion-toolbar> 
+</ion-footer>

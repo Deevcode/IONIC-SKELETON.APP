@@ -16,9 +16,9 @@ export class NoIngresadoGuard implements CanActivate {
     
     if(localStorage.getItem('ingresado')){
       this.navCtrl.navigateRoot('home');
-      return false;
+      return false; /* SI EL USUARIO ESTA LOGEADO CON UNA SECCION, HAZLO PASAR */
     }else{
-      return true;
+      return true;/* SI EL USUARIO NO ESTA LOGEADO CON UNA SECCION, DENEGA EL ACCESO */
     }
   }
   

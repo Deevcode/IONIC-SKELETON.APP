@@ -14,10 +14,10 @@ export class IngresadoGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if(localStorage.getItem('ingresado')){
-      return true;
+      return true; /* SI EL USUARIO ESTA LOGEADO CON UNA SECCION, HAZLO PASAR */
     }else{
       this.navCtrl.navigateRoot('login');
-      return false;
+      return false; /* SI EL USUARIO NO ESTA LOGEADO CON UNA SECCION, DENEGA EL ACCESO Y LLEVALO A LA PAGE DE LOGIN */
     }
   }
   

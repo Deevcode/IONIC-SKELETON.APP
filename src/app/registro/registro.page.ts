@@ -23,11 +23,11 @@ export class RegistroPage implements OnInit {
     });
    }
 
-   ngOnInit() {
+   ngOnInit() { /* INICIO DE PROCESO DE UNA PAGINA */
     console.log('Login ngOnInit');
   }
 
-  async guardar() {
+  async guardar() { /* FUNCION ASINCRONA QUE VALIDA DATOS INGRESADOS ESTEN TODOS COMPLETOS */
     var f = this.formularioRegistro.value;
 
     if(this.formularioRegistro.invalid){
@@ -40,18 +40,33 @@ export class RegistroPage implements OnInit {
       return;
     }
     
+
     var usuario = {
       nombre: f.nombre,
       password: f.password
     }
+    
+    /*  
+-------------- POSIBLE VALIDACION PARA PARAMETROS DE REGISTRO -------------- COMPILA PERO NO CONDICIONA
 
+    if(usuario.password == String && usuario.nombre == Number){
+      const alert = await this.alertController.create({
+        header : 'Datos Incompletos',
+        message : '123456',
+        buttons : ['Aceptar']
+      });
+      await alert.present();
+      return;
+    }
+---------------------------------------------------------------------------------------------------------
+    */
     localStorage.setItem('usuario',JSON.stringify(usuario));
 
     localStorage.setItem('ingresado','true');
     this.navCtrl.navigateRoot('home');
   }
 
-  ngOnDestroy(){
+  ngOnDestroy(){ /* FIN DE LA EJECUCCION DE PROCESOS */
     console.log('Login ngOnDestroy');
   }
 

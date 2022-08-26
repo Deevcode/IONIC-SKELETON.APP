@@ -17,7 +17,7 @@
 
         <ion-label position="top-center" >Porfavor ingrese sus datos</ion-label>
 
-        <form [formGroup]="formularioLogin"> <!--Procedemos a solicitar datos del formulario-->
+        <form [formGroup]="formularioLogin"> <!--Procedemos a solicitar datos del formulario login-->
   
           <ion-item>
             <ion-label position="floating" >Nombre</ion-label> <!--Dato numero 1-->
@@ -29,11 +29,11 @@
             <ion-input formControlName="password" type="password"></ion-input>
           </ion-item>
           <br>
-          <ion-button slot="start" (click)="ingresar()" >Ingresar</ion-button>
+          <ion-button slot="start" (click)="ingresar()" >Ingresar</ion-button> <!--EJECUTA LA FUNCION INGRESAR DECLARADA EN login.page.ts-->
         </form>
         <br>
         
-        <ion-button slot="end" [routerLink]="['/registro']" >Registrarse</ion-button>
+        <ion-button slot="end" [routerLink]="['/registro']" >Registrarse</ion-button> <!--REDIRECCIONA A LA PAGE DE REGISTRO-->
       </ion-card-content>
 
     </ion-card>

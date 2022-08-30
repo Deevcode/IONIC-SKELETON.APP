@@ -17,8 +17,8 @@ export class LoginPage implements OnInit {
     public navCtrl: NavController) { /* CONSTRUCTOR DE CONTROLADOR */
 
     this.formularioLogin = this.fb.group({ /* DATOS PARA EL FORMULARIO DE LOGIN */
-      'nombre': new FormControl("",Validators.required),
-      'password': new FormControl("",Validators.required)
+      'nombre': new FormControl(Validators.minLength(3),Validators.maxLength(8)),
+      'password': new FormControl(Validators.maxLength(4),Validators.pattern('0-9'))
     });
 
   }

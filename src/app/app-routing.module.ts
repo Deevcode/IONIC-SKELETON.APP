@@ -17,12 +17,12 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
-    canActivate: [NoIngresadoGuard] /* VALIDA SI SE ESTA USANDO POR UN USUARIO REGISTRADO */
+    canActivate: [IngresadoGuard] /* VALIDA SI SE ESTA USANDO POR UN USUARIO REGISTRADO */
   },
   {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule),
-    canActivate: [NoIngresadoGuard] /* VALIDA SI SE ESTA USANDO POR UN USUARIO REGISTRADO */
+    canActivate: [IngresadoGuard] /* VALIDA SI SE ESTA USANDO POR UN USUARIO REGISTRADO */
   },
 ];
 

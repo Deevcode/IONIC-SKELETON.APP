@@ -17,8 +17,8 @@ export class LoginPage implements OnInit {
     public navCtrl: NavController) { /* CONSTRUCTOR DE CONTROLADOR */
 
     this.formularioLogin = this.fb.group({ /* DATOS PARA EL FORMULARIO DE LOGIN */
-      'nombre': new FormControl(Validators.minLength(3),Validators.maxLength(8)),
-      'password': new FormControl(Validators.maxLength(4),Validators.pattern('0-9'))
+      'nombre': new FormControl(Validators.minLength(3),Validators.maxLength(8)), /* VALIDA QUE EL FORMULARIO TENGA UN MINIMO DE 3 CARACTERES Y UN MAXIMO DE 8 CARACTERES */
+      'password': new FormControl(Validators.maxLength(4),Validators.pattern('0-9')) /* VALIDA QUE SEAN SOLO NUMEROS DEL 0 AL 9 Y QUE SU MAXIMO DE CARACTERES SEA DE 4 */
     });
 
   }

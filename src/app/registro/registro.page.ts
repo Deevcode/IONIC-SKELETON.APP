@@ -15,14 +15,13 @@ export class RegistroPage implements OnInit {
     public alertController: AlertController,
     public navCtrl: NavController) {
     this.formularioRegistro = this.fb.group({
-      'nombre' : new FormControl(Validators.minLength(3),Validators.maxLength(8)),
-      'apellido' : new FormControl(Validators.minLength(3),Validators.maxLength(8)),
-      'password' : new FormControl(Validators.maxLength(4),Validators.pattern('0-9')),
-      'confirmPassword' : new FormControl(Validators.maxLength(4),Validators.pattern('0-9')),
+      'nombre' : new FormControl(Validators.minLength(3),Validators.maxLength(8)), /* VALIDA QUE EL FORMULARIO TENGA UN MINIMO DE 3 CARACTERES Y UN MAXIMO DE 8 CARACTERES */
+      'apellido' : new FormControl(Validators.minLength(3),Validators.maxLength(8)),/* VALIDA QUE EL FORMULARIO TENGA UN MINIMO DE 3 CARACTERES Y UN MAXIMO DE 8 CARACTERES */
+      'password' : new FormControl(Validators.maxLength(4),Validators.pattern('0-9')),/* VALIDA QUE SEAN SOLO NUMEROS DEL 0 AL 9 Y QUE SU MAXIMO DE CARACTERES SEA DE 4 */
+      'confirmPassword' : new FormControl(Validators.maxLength(4),Validators.pattern('0-9')),/* VALIDA QUE SEAN SOLO NUMEROS DEL 0 AL 9 Y QUE SU MAXIMO DE CARACTERES SEA DE 4 */
       'educacion' : new FormControl("",Validators.required)
     });
    }
-
    ngOnInit() { /* INICIO DE PROCESO DE UNA PAGINA */
     console.log('Login ngOnInit');
   }

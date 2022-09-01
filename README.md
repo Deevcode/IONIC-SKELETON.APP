@@ -1,3 +1,3 @@
 # IONIC-SKELETON.APP
 
-1. ramaA Jose Cornejo
+1. sebastián rodríguez
